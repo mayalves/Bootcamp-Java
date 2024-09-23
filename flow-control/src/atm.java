@@ -4,11 +4,9 @@ public class atm {
        Double amountRequested = 17.0;
 
        if (amountRequested < balance) {
-        balance = balance - amountRequested;
-
-        System.out.println(balance);
-        
-       }
-
+            balance = balance - amountRequested;
+            System.out.println("New balance: " + balance);
+      }else
+        System.out.println("Insufficient balance");
     }
 }
