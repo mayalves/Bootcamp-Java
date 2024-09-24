@@ -1,7 +1,7 @@
 public class MobilePlan {
   public static void main(String[] args) {
     String plan = "T"; // B or T
-
+    
     switch (plan) {
       case "T": {
         System.out.println("5 GB Youtube");
