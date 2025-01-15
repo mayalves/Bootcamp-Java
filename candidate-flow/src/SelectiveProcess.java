@@ -1,9 +1,11 @@
 import java.util.concurrent.ThreadLocalRandom;
 public class SelectiveProcess {
     public static void main(String[] args) {
-     /* analyzeCandidate(1900.0);
+        analyzeCandidate(1900.0);
         analyzeCandidate(2200.0);
-        analyzeCandidate(2000.0); */
+        analyzeCandidate(2000.0); 
+
+        candidateSelection();
     }
 
     static void candidateSelection(){
@@ -20,7 +22,7 @@ public class SelectiveProcess {
 
             System.out.println("The candidate " + candte + " requested this salary amount: " + desiredSalary);
             if (baseSalary >= desiredSalary) {
-                System.out.println("The candidate " + candidate + " was selected for the vacancy");
+                System.out.println("The candidate " + candte + " was selected for the vacancy");
                 selectedCandidate++;
             }
             currentCandidate++;
@@ -28,7 +30,7 @@ public class SelectiveProcess {
     }
 
     static double desiredValue() {
-        return ThreadLocalRandom.current().nextDouble(1800, 2000);
+        return ThreadLocalRandom.current().nextDouble(1800, 2200);
     }
 
     static void analyzeCandidate(double desiredSalary){
