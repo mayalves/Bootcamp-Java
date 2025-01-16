@@ -1,11 +1,54 @@
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 public class SelectiveProcess {
     public static void main(String[] args) {
-        analyzeCandidate(1900.0);
-        analyzeCandidate(2200.0);
-        analyzeCandidate(2000.0); 
+        String [] candidate = {"FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO"};
 
-        candidateSelection();
+        for (String candi : candidate) {
+            gettingInTouch(candi);
+        }
+
+
+
+     /* analyzeCandidate(1900.0);
+        analyzeCandidate(2200.0);
+        analyzeCandidate(2000.0); */
+        // candidateSelection(); 
+        // printSelected();
+    }
+
+    static void gettingInTouch(String candi) {
+        int attemptsMade = 1;
+        boolean keepTrying = true;
+        boolean answered = false;
+
+        do {
+            answered = answer();
+            keepTrying = !answered;
+            if (keepTrying)
+                attemptsMade++;
+            else
+                System.out.println("Contact made successfully");    
+        } while (keepTrying && attemptsMade < 3);
+        if (answered) 
+            System.out.println("We got in touch with " + candi + " in the " + attemptsMade + " attempt");
+        else
+        System.out.println("We were unable to contact with " + candi + ", MAXIMUM NUMBER OF ATTEMPTS " + attemptsMade + " attempts made");
+
+    }
+
+
+    // Auxiliary method
+    static boolean answer(){
+        return new Random().nextInt(3) == 1;
+    }
+
+    static void printSelected(){
+        String [] candidate = {"FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO"};
+
+        for (String candi : candidate) {
+            System.out.println("The selected candidate was: " + candi);
+        }
     }
 
     static void candidateSelection(){
