@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class VerificadorNumeroConta {
 
     public static void main(String[] args) {
@@ -11,6 +10,7 @@ public class VerificadorNumeroConta {
             
             String numeroConta = scanner.nextLine();
 
+        // Chamar o método que verifica se a conta é válida
             verificarNumeroConta(numeroConta);
             
             // Caso nenhuma exceção seja lançada, imprime a mensagem de sucesso.
